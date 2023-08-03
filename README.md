@@ -28,7 +28,7 @@ git init
 touch .gitignore
 
 # Run the project to check status
-django-admin manage.py runserver
+python manage.py runserver
 
 
 ```
