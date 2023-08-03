@@ -15,7 +15,7 @@ conda activate djgenv
 *__Install Django in activated environment__
 
 ```bash
-pip install DJango==4.2.4
+pip install django==4.2.4
 
 # Create wordcount project
 django-admin startproject wordcount
