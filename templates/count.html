@@ -1,0 +1,15 @@
+<p>
+  <a href="{% url 'home' %}">Start again</a> | <a href={% url 'about' %}>About Game</a>
+</p>
+
+<h3>Counts - from templates</h3>
+
+<p>Total number of words: {{ word_count }}</p>
+<p>{{ fulltext }}</p>
+<p>
+  <pre> 
+    <code class="language-js line-numbers">
+    {{ word_dict }} 
+    </code>
+</pre>
+</p>
