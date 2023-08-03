@@ -1,15 +1,59 @@
-<p>
-  <a href="{% url 'home' %}">Start again</a> | <a href={% url 'about' %}>About Game</a>
-</p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="Description" content="Enter your description here" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Django Appy</title>
+  </head>
+  <body>
+     <header class="p-3 bg-primary-subtle">
+        <ul class="nav shadow p-3 mb-5 bg-body-tertiary rounded">
+             <li class="nav-item">
+    <a class="nav-link disabled" aria-disabled="true">WORD COUNT APP</a>
+  </li>
+  <li class="nav-item">
+    <a  class="nav-link active" aria-current="page" href="{% url 'home' %}">Start again</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href={% url 'about' %}>About Game</a>
+  </li>
 
-<h3>Counts - from templates</h3>
+ 
+</ul>
+    </header>
+    <div class=
+    <div class="container">
+<div class="row">
+
+<div class="col-md-8 offset-md-2"> 
+<h4>The Results are here:</h4>
 
 <p>Total number of words: {{ word_count }}</p>
-<p>{{ fulltext }}</p>
+<h5>Original Text</h5>
+<p>
+    {{ fulltext }}</p>
 <p>
   <pre> 
     <code class="language-js line-numbers">
-    {{ word_dict }} 
+    {% for word, count in word_dict %}
+    {{ word }} - {{ count }}
+    {% endfor %} 
     </code>
 </pre>
 </p>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -17,29 +17,30 @@
     <title>Django Appy</title>
   </head>
   <body>
+     <header class="p-3 bg-primary-subtle">
+        <ul class="nav shadow p-3 mb-5 bg-body-tertiary rounded">
+             <li class="nav-item">
+    <a class="nav-link disabled" aria-disabled="true">WORD COUNT APP</a>
+  </li>
+  <li class="nav-item">
+    <a  class="nav-link active" aria-current="page" href="{% url 'home' %}">Start again</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href={% url 'about' %}>About Game</a>
+  </li>
+
+ 
+</ul>
+    </header>
     <div class="container p-5">
-        <div class="row">
-            <p>
-  <a href="{% url 'home' %}">Start again</a> | <a href={% url 'about' %}>About Game</a>
-</p>
-        </div>
       <div class="row">
         <div class="col-md-8 offset-md-2 center bold">
-          <h2>about - the django</h2>
+          <h3>about - the django</h3>
 
-          <form action="{% url 'count' %}">
-            <div class="form-group">
-              <textarea cols="40" rows="10" name="fulltext"> </textarea>
-            </div>
-            <div class="form-group">
-              <input
-                type="submit"
-                class="btn btn-primary btn-large"
-                value="Count"
-              />
-            </div>
-            <br />
-          </form>
+          <p>
+A simple app that allows users enter text and upon submission, returns the cuont of the words enter and a list of individual words and the counts.
+
+          </p>
         </div>
       </div>
     </div>

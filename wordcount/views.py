@@ -18,20 +18,26 @@ def about(request):
 @csrf_exempt
 def count(request):
     fulltext = request.GET["fulltext"]
+    fulltext = fulltext.replace("(", "")
+    fulltext = fulltext.replace(")", "")
+    fulltext = fulltext.replace(".", "")
+    fulltext = fulltext.replace(",", "")
+    fulltext = fulltext.replace("$", "")
     word_list = fulltext.split()
-    word_dict = dict()
+    word_dict = {}
     for word in word_list:
         if word in word_dict:
             word_dict[word] += 1
         else:
             word_dict[word] = 1
     word_dict = sorted(word_dict.items(), key=operator.itemgetter(1), reverse=True)
+    word_count = len(word_list)
     return render(
         request,
         "count.html",
         {
             "fulltext": fulltext,
-            "word_count": {len(word_list)},
+            "word_count": word_count,
             "word_dict": word_dict,
         },
     )
